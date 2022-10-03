@@ -1,0 +1,37 @@
+<<<<<<< HEAD
+UI-Trung/.vs/
+UI-Trung/Library/
+UI-Trung/Logs/
+UI-Trung/obj/
+UI-Trung/Temp/
+UI-Trung/UserSettings/
+UI-Trung/.vsconfig
+UI-Trung/Assembly-CSharp.csproj
+UI-Trung/UI.sln
+UI-Trung/UI-Trung.sln
+
+UI2/.vs/
+UI2/Library/
+UI2/Logs/
+UI2/obj/
+UI2/Temp/
+UI2/UserSettings/
+UI2/.vsconfig
+UI2/Assembly-CSharp.csproj
+UI2/UI.sln
+UI2/UI2.sln
+=======
+
+README.md
+
+/.vs
+/Library
+/Logs
+/obj
+/Temp
+/UserSettings
+.vsconfig
+Assembly-CSharp.csproj
+UI.sln
+NewGame.sln
+>>>>>>> 491fd7c295b6d37222046f6f763995ba89656a09
