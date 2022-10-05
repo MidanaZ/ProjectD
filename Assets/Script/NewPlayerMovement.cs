@@ -14,6 +14,10 @@ public class NewPlayerMovement : MonoBehaviour
     public Transform GroundCheck;
     float horizontalMove = 0f;
     bool isFlip = false;
+    public bool canJump = true;
+    public float jumpValue = 0.0f;
+
+
     void Start()
     {
         Time.timeScale = 1;
@@ -21,20 +25,60 @@ public class NewPlayerMovement : MonoBehaviour
     void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+
+        if(jumpValue == 0.0f && isGrounded)
+        {
+            rb.velocity = new Vector2 (horizontalMove, rb.velocity.y);
+        }
+
         animator.SetFloat("MoveSpeed", Mathf.Abs(horizontalMove));
         CoreMoveCode();
         Flip();
         JumpAnimation();
         AnimationOnPlatform();
         GroundChecking();
+
+        if(Input.GetKey("space") && isGrounded && canJump)
+        {
+            jumpValue += 0.2f;
+        }
+
+        if(Input.GetKeyDown("space")&& isGrounded && canJump)
+        {
+            rb.velocity = new Vector2(0.0f, rb.velocity.y);
+        }
+
+        if(jumpValue >= 20f && isGrounded)
+        {
+            float tempx = horizontalMove;
+            float tempy = jumpValue;
+            rb.velocity = new Vector2(tempx, tempy);
+            Invoke("ResetJump", 0.2f);
+        }
+
+        if (Input.GetKeyUp("space"))
+        {
+            if (isGrounded)
+            {
+                rb.velocity =new Vector2(horizontalMove, jumpValue);
+                jumpValue = 0.0f;
+            }
+            canJump = true;
+        }
+
+    }
+    void ResetJump()
+    {
+        canJump = false;
+        jumpValue = 0;
     }
     private void CoreMoveCode()
     {
         player.transform.localPosition += new Vector3(horizontalMove * Time.deltaTime, 0,0);
-        if(isGrounded == true && (Input.GetButtonDown("Jump")))
-        {
-            rb.AddForce(new Vector2(0, JumpForce));
-        }
+        //if(isGrounded == true && (Input.GetButtonDown("Jump")))
+        //{
+        //    rb.AddForce(new Vector2(0, JumpForce));
+        //}
     }
     private void GroundChecking()
     {
@@ -91,8 +135,5 @@ public class NewPlayerMovement : MonoBehaviour
         }
         
     }
-    public float getMove()
-    {
-        return horizontalMove;
-    }
+    
 }
