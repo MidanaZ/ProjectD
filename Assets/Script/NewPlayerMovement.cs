@@ -14,27 +14,66 @@ public class NewPlayerMovement : MonoBehaviour
     public Transform GroundCheck;
     float horizontalMove = 0f;
     bool isFlip = false;
+    public bool canJump = true;
+    public float jumpValue = 0.0f;
     void Start()
     {
         Time.timeScale = 1;
     }
     void Update()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+        horizontalMove = Input.GetAxisRaw("Horizontal");    
         animator.SetFloat("MoveSpeed", Mathf.Abs(horizontalMove));
         CoreMoveCode();
         Flip();
         JumpAnimation();
         AnimationOnPlatform();
         GroundChecking();
+
+        if(jumpValue == 0.0f && isGrounded)
+        {
+            rb.velocity = new Vector2(horizontalMove * runSpeed, rb.velocity.y);
+        }
+
+        if(Input.GetKey("space") && isGrounded && canJump)
+        {
+            jumpValue += 0.25f;
+        }
+
+        if(jumpValue >= 20f && isGrounded)
+        {
+            float tempx = horizontalMove * runSpeed;
+            float tempy = jumpValue;
+            rb.velocity = new Vector2(tempx,tempy);
+            Invoke("ResetJump", 0.2f);
+        }
+
+        if (Input.GetKeyUp("space"))
+        {
+            if (isGrounded)
+            {
+                rb.velocity = new Vector2(horizontalMove * runSpeed, jumpValue);
+                jumpValue = 0.0f;
+            }
+            canJump = true;
+        }
+        if (Input.GetKeyDown("space") && isGrounded && canJump)
+        {
+            rb.velocity = new Vector2(0.0f, rb.velocity.y);
+        }
+    }
+    void ResetJump()
+    {
+        canJump = false;
+        jumpValue = 0.0f;
     }
     private void CoreMoveCode()
     {
-        player.transform.localPosition += new Vector3(horizontalMove * Time.deltaTime, 0,0);
-        if(isGrounded == true && (Input.GetButtonDown("Jump")))
-        {
-            rb.AddForce(new Vector2(0, JumpForce));
-        }
+        player.transform.localPosition += new Vector3(horizontalMove * Time.deltaTime, 0, 0);
+        //if (isGrounded == true && (Input.GetButtonDown("Jump")))
+        //{
+        //    rb.AddForce(new Vector2(0, JumpForce));
+        //}
     }
     private void GroundChecking()
     {
@@ -77,7 +116,10 @@ public class NewPlayerMovement : MonoBehaviour
         {
             animator.SetBool("Jumping", true);
         }
-
+        if (Input.GetKey("space"))
+        {
+            animator.SetBool("Startjump",true);
+        }
 
         if (rb.velocity.y < -2)
         {
