@@ -14,6 +14,8 @@ public class NewPlayerMovement : MonoBehaviour
     public Transform GroundCheck;
     float horizontalMove = 0f;
     bool isFlip = false;
+
+    public LayerMask groundMask;
     public bool canJump = true;
     public float jumpValue = 0.0f;
 
@@ -40,7 +42,7 @@ public class NewPlayerMovement : MonoBehaviour
 
         if(Input.GetKey("space") && isGrounded && canJump)
         {
-            jumpValue += 0.2f;
+            jumpValue += 0.15f;
         }
 
         if(Input.GetKeyDown("space")&& isGrounded && canJump)
@@ -82,24 +84,26 @@ public class NewPlayerMovement : MonoBehaviour
     }
     private void GroundChecking()
     {
-        isGrounded = false;
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(GroundCheck.position, .2f, LayerGroundIs);
-        for (int i = 0; i < colliders.Length; i++)
-        {
-            if (colliders[i].gameObject != gameObject)
-                isGrounded = true;
-            //animator.SetBool("Grounded", true);
-        }
+        //isGrounded = false;
+        //Collider2D[] colliders = Physics2D.OverlapCircleAll(GroundCheck.position, .2f, LayerGroundIs);
+        //for (int i = 0; i < colliders.Length; i++)
+        //{
+        //    if (colliders[i].gameObject != gameObject)
+        //        isGrounded = true;
+        //    //animator.SetBool("Grounded", true);
+        //}
+
+        isGrounded = Physics2D.OverlapBox(new Vector2(gameObject.transform.position.x, gameObject.transform.position.y - 0.5f), new Vector2(0.9f, 0.4f), 0f, groundMask);
     }
     private void AnimationOnPlatform()
     {
         if(isGrounded == true)
         {
-            animator.SetBool("Grounded", true);
+            //animator.SetBool("Grounded", true);
         }
         if (isGrounded == false)
         {
-            animator.SetBool("Grounded", false);
+            //animator.SetBool("Grounded", false);
         }
     }
     private void  Flip()

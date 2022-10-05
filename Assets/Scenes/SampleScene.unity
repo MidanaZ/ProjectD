@@ -2014,7 +2014,7 @@ GameObject:
   - component: {fileID: 2006435942}
   - component: {fileID: 2006435941}
   - component: {fileID: 2006435943}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3418,7 +3418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4547150879999775480, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
       propertyPath: m_Mass
-      value: 5
+      value: 0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 4547150879999775480, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
       propertyPath: m_GravityScale
@@ -3426,11 +3426,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4547150879999775482, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
       propertyPath: runSpeed
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4547150879999775482, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
       propertyPath: JumpForce
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547150879999775482, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
+      propertyPath: groundMask.m_Bits
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 4547150880498218190, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
       propertyPath: m_LocalPosition.y
