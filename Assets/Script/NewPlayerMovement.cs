@@ -89,5 +89,10 @@ public class NewPlayerMovement : MonoBehaviour
             animator.SetBool("Jumping", false);
             animator.SetBool("Falling", false);
         }
+        
+    }
+    public float getMove()
+    {
+        return horizontalMove;
     }
 }
