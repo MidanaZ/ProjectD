@@ -16,6 +16,7 @@ public class NewPlayerMovement : MonoBehaviour
     bool isFlip = false;
 
     //public LayerMask groundMask;
+    public PhysicsMaterial2D bounceMat, normalMat;
     public bool canJump = true;
     public float jumpValue = 0.0f;
 
@@ -44,7 +45,14 @@ public class NewPlayerMovement : MonoBehaviour
         {
             jumpValue += 0.15f;
         }
-
+        if(jumpValue > 0)
+        {
+            rb.sharedMaterial = bounceMat;
+        }
+        else
+        {
+            rb.sharedMaterial = normalMat;
+        }
         if(Input.GetKeyDown("space")&& isGrounded && canJump)
         {
             rb.velocity = new Vector2(0.0f, rb.velocity.y);

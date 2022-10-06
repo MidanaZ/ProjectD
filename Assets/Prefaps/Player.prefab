@@ -201,13 +201,15 @@ MonoBehaviour:
   player: {fileID: 4547150879999775478}
   animator: {fileID: 4547150879999775479}
   rb: {fileID: 4547150879999775480}
-  runSpeed: 10
-  JumpForce: 500
+  runSpeed: 5
+  JumpForce: 0
   LayerGroundIs:
     serializedVersion: 2
     m_Bits: 32
   isGrounded: 1
   GroundCheck: {fileID: 4547150880498218190}
+  bounceMat: {fileID: 0}
+  normalMat: {fileID: 0}
   canJump: 1
   jumpValue: 0
 --- !u!114 &4547150879999775483
@@ -229,6 +231,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   attackDamage: 40
+  rb: {fileID: 0}
 --- !u!1 &4547150880042582853
 GameObject:
   m_ObjectHideFlags: 0
