@@ -3418,7 +3418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4547150879999775480, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
       propertyPath: m_Mass
-      value: 0.0001
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4547150879999775480, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
       propertyPath: m_GravityScale
@@ -3434,7 +3434,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4547150879999775482, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
       propertyPath: groundMask.m_Bits
-      value: 128
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547150879999775482, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
+      propertyPath: LayerGroundIs.m_Bits
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 4547150880498218190, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
       propertyPath: m_LocalPosition.y

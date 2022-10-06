@@ -9,6 +9,7 @@ public class PlayerCombat : MonoBehaviour
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
     public int attackDamage = 40;
+    public Rigidbody2D rb;
 
     // Update is called once per frame
     void Update()

@@ -7,15 +7,15 @@ public class NewPlayerMovement : MonoBehaviour
     public Transform player;
     public Animator animator;
     public Rigidbody2D rb;
-    public float runSpeed = 10f;
-    public float JumpForce = 10f;
+    public float runSpeed = 0f;
+    public float JumpForce = 0f;
     public LayerMask LayerGroundIs;
     public bool isGrounded = false;
     public Transform GroundCheck;
     float horizontalMove = 0f;
     bool isFlip = false;
 
-    public LayerMask groundMask;
+    //public LayerMask groundMask;
     public bool canJump = true;
     public float jumpValue = 0.0f;
 
@@ -84,16 +84,16 @@ public class NewPlayerMovement : MonoBehaviour
     }
     private void GroundChecking()
     {
-        //isGrounded = false;
-        //Collider2D[] colliders = Physics2D.OverlapCircleAll(GroundCheck.position, .2f, LayerGroundIs);
-        //for (int i = 0; i < colliders.Length; i++)
-        //{
-        //    if (colliders[i].gameObject != gameObject)
-        //        isGrounded = true;
-        //    //animator.SetBool("Grounded", true);
-        //}
+        isGrounded = false;
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(GroundCheck.position, .2f, LayerGroundIs);
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            if (colliders[i].gameObject != gameObject)
+                isGrounded = true;
+            //animator.SetBool("Grounded", true);
+        }
 
-        isGrounded = Physics2D.OverlapBox(new Vector2(gameObject.transform.position.x, gameObject.transform.position.y - 0.5f), new Vector2(0.9f, 0.4f), 0f, groundMask);
+        //isGrounded = Physics2D.OverlapBox(new Vector2(gameObject.transform.position.x, gameObject.transform.position.y - 0.5f), new Vector2(0.9f, 0.4f), 0f, groundMask);
     }
     private void AnimationOnPlatform()
     {
@@ -125,8 +125,14 @@ public class NewPlayerMovement : MonoBehaviour
         {
             animator.SetBool("Jumping", true);
         }
-
-
+        if (Input.GetKey("space"))
+        {
+            animator.SetBool("Startjump",true);
+        }
+        if (Input.GetKeyUp("space"))
+        {
+            animator.SetBool("Startjump", false);
+        }
         if (rb.velocity.y < -2)
         {
             animator.SetBool("Jumping", false);
