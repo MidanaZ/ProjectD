@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public Collider2D Collision;
     public float speed;
 
-    private float horizontalMove;
+    public float horizontalMove;
     public bool isFlip = false;
     private void Update()
     {

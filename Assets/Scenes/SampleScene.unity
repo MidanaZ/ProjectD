@@ -2522,7 +2522,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1306641482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2538,6 +2538,7 @@ MonoBehaviour:
   rb: {fileID: 1306641484}
   Collision: {fileID: 1306641483}
   speed: 10
+  horizontalMove: 0
   isFlip: 0
 --- !u!61 &1306641483
 BoxCollider2D:
@@ -4571,13 +4572,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4451087777535984262, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4547150879999775476, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4547150879999775476, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4547150879999775478, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
       propertyPath: m_RootOrder
@@ -4625,12 +4630,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4547150879999775480, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
       propertyPath: m_Mass
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4547150879999775480, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 6200000, guid: 390b95f18e6eeb849ba2c104cdadbe57, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 4547150879999775480, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
       propertyPath: m_GravityScale
       value: 3
@@ -4641,6 +4646,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4547150879999775482, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
       propertyPath: JumpForce
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547150879999775482, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4547150879999775482, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
@@ -4659,7 +4668,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.218
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4547150879999775482, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
 --- !u!1001 &6692483651305754916
 PrefabInstance:

@@ -43,7 +43,9 @@ GameObject:
   - component: {fileID: 4547150879999775479}
   - component: {fileID: 4547150879999775481}
   - component: {fileID: 4547150879999775480}
-  - component: {fileID: 4547150879999775482}
+  - component: {fileID: 1180055044320912890}
+  - component: {fileID: 4451087777535984262}
+  - component: {fileID: 4208608296310066935}
   - component: {fileID: 4547150879999775483}
   m_Layer: 6
   m_Name: Player
@@ -186,7 +188,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &4547150879999775482
+--- !u!114 &1180055044320912890
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -195,23 +197,50 @@ MonoBehaviour:
   m_GameObject: {fileID: 4547150879999775476}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a703aad9efdf4741a705aacfe2dc6dc, type: 3}
+  m_Script: {fileID: 11500000, guid: 7170895b74139394ea815a505459f4db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 4547150879999775478}
-  animator: {fileID: 4547150879999775479}
-  rb: {fileID: 4547150879999775480}
-  runSpeed: 5
   JumpForce: 0
+  rb: {fileID: 4547150879999775480}
+  isGrounded: 0
+  GroundCheck: {fileID: 4547150880498218190}
   LayerGroundIs:
     serializedVersion: 2
-    m_Bits: 32
-  isGrounded: 1
-  GroundCheck: {fileID: 4547150880498218190}
-  bounceMat: {fileID: 0}
-  normalMat: {fileID: 0}
-  canJump: 1
-  jumpValue: 0
+    m_Bits: 160
+  playerMovementScript: {fileID: 4451087777535984262}
+--- !u!114 &4451087777535984262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4547150879999775476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b46eac7ecec7e94695b5b5f1e2d625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 4547150879999775480}
+  Collision: {fileID: 4547150879999775481}
+  speed: 0
+  horizontalMove: 0
+  isFlip: 0
+--- !u!114 &4208608296310066935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4547150879999775476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a1bcd92da21fc7499898add66a02f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 4547150879999775480}
+  animator: {fileID: 4547150879999775479}
+  pvm: {fileID: 4451087777535984262}
+  jb: {fileID: 1180055044320912890}
 --- !u!114 &4547150879999775483
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -19,7 +19,7 @@ public class JumpBehavior : MonoBehaviour
     {
         if(Input.GetKey("space"))
         {
-            JumpForce += 0.15f;
+            JumpForce += 0.25f;
             this.GetComponent<PlayerMovement>().enabled = false;
         }
         if(Input.GetKeyUp("space"))
