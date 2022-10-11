@@ -2240,6 +2240,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!50 &854669057 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 4547150879999775480, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
+  m_PrefabInstance: {fileID: 4547150880841589392}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &874843694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4664,6 +4669,10 @@ PrefabInstance:
       propertyPath: LayerGroundIs.m_Bits
       value: 160
       objectReference: {fileID: 0}
+    - target: {fileID: 4547150879999775483, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 854669057}
     - target: {fileID: 4547150880498218190, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.218
