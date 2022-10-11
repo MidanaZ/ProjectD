@@ -855,7 +855,7 @@ GameObject:
   - component: {fileID: 674401451}
   - component: {fileID: 674401450}
   - component: {fileID: 674401452}
-  m_Layer: 5
+  m_Layer: 4
   m_Name: Treepilar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2240,11 +2240,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!50 &854669057 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 4547150879999775480, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
-  m_PrefabInstance: {fileID: 4547150880841589392}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &874843694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2673,7 +2668,8 @@ MonoBehaviour:
   JumpForce: 0
   rb: {fileID: 1306641484}
   isGrounded: 0
-  GroundCheck: {fileID: 793858481}
+  GroundCheck1: {fileID: 0}
+  GroundCheck2: {fileID: 0}
   LayerGroundIs:
     serializedVersion: 2
     m_Bits: 160
@@ -4577,17 +4573,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4451087777535984262, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
-      propertyPath: speed
-      value: 10
+    - target: {fileID: 1180055044320912890, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
+      propertyPath: LayerGroundIs.m_Bits
+      value: 168
       objectReference: {fileID: 0}
     - target: {fileID: 4547150879999775476, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4547150879999775476, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4547150879999775478, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
       propertyPath: m_RootOrder
@@ -4633,52 +4625,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4547150879999775480, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4547150879999775480, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4547150879999775480, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
-      propertyPath: m_GravityScale
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4547150879999775482, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
-      propertyPath: runSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4547150879999775482, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
-      propertyPath: JumpForce
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4547150879999775482, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4547150879999775482, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
-      propertyPath: normalMat
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4547150879999775482, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
-      propertyPath: groundMask.m_Bits
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4547150879999775482, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
-      propertyPath: LayerGroundIs.m_Bits
-      value: 160
-      objectReference: {fileID: 0}
-    - target: {fileID: 4547150879999775483, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
-      propertyPath: rb
-      value: 
-      objectReference: {fileID: 854669057}
-    - target: {fileID: 4547150880498218190, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.218
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4547150879999775482, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fcd77d70906af842a476b1b7bcef344, type: 3}
 --- !u!1001 &6692483651305754916
 PrefabInstance:

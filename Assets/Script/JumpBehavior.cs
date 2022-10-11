@@ -25,8 +25,8 @@ public class JumpBehavior : MonoBehaviour
         }
         if(JumpForce >= 20f)
         {
-            rb.velocity = new Vector2(playerMovementScript.speed / 3, JumpForce);
-            rb.velocity = new Vector2(playerMovementScript.speed / 3 * -1, JumpForce);
+            rb.velocity = new Vector2(playerMovementScript.speed, JumpForce);
+            rb.velocity = new Vector2(playerMovementScript.speed * -1, JumpForce);
         }
         if(Input.GetKeyUp("space"))
         {

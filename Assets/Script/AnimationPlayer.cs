@@ -22,10 +22,10 @@ public class AnimationPlayer : MonoBehaviour
     }
     private void JumpAnimation()
     {
-        if (rb.velocity.y > 1)
+        /*if (rb.velocity.y > 1)
         {
             animator.SetBool("Jumping", true);
-        }
+        }*/
         if (Input.GetKey("space"))
         {
             animator.SetBool("Startjump", true);
