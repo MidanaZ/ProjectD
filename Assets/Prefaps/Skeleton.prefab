@@ -185,7 +185,7 @@ MonoBehaviour:
   rayCastLenght: 6
   attackDistance: 2
   moveSpeed: 2
-  timer: 0
+  timer: 3
 --- !u!50 &5537842272221021841
 Rigidbody2D:
   serializedVersion: 4

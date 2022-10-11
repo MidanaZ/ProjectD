@@ -18,17 +18,18 @@ public class JumpBehavior : MonoBehaviour
     }
     private void Jumping()
     {
-        if(Input.GetKey("space"))
+        if (Input.GetKey("space"))
         {
             JumpForce += 0.25f;
             this.GetComponent<PlayerMovement>().enabled = false;
         }
-        if(JumpForce >= 20f)
+        if (JumpForce >= 20f && isGrounded)
         {
-            rb.velocity = new Vector2(playerMovementScript.speed, JumpForce);
-            rb.velocity = new Vector2(playerMovementScript.speed * -1, JumpForce);
+            rb.velocity = new Vector2(playerMovementScript.horizontalMove, JumpForce);
+            JumpForce = 0;
+            
         }
-        if(Input.GetKeyUp("space"))
+        if (Input.GetKeyUp("space"))
         {
             if(playerMovementScript.isFlip == false)
             {
