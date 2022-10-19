@@ -14,6 +14,7 @@ public class NewPlayerMovement : MonoBehaviour
     public Transform GroundCheck;
     float horizontalMove = 0f;
     bool isFlip = false;
+    private bool dash;
     void Start()
     {
         Time.timeScale = 1;
@@ -27,6 +28,7 @@ public class NewPlayerMovement : MonoBehaviour
         JumpAnimation();
         AnimationOnPlatform();
         GroundChecking();
+        //Dash();
     }
     private void CoreMoveCode()
     {
@@ -46,6 +48,7 @@ public class NewPlayerMovement : MonoBehaviour
                 isGrounded = true;
             //animator.SetBool("Grounded", true);
         }
+        
     }
     private void AnimationOnPlatform()
     {

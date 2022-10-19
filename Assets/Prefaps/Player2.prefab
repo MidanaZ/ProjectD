@@ -70,10 +70,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5756699945811894458}
   - component: {fileID: 2302346824653033373}
+  - component: {fileID: 6203968504879096872}
   - component: {fileID: 5279009872536683296}
   - component: {fileID: 8756512989099300641}
   - component: {fileID: 3871542307663602659}
   - component: {fileID: 7061958618502495147}
+  - component: {fileID: 49182934824692318}
   m_Layer: 6
   m_Name: Player2
   m_TagString: Untagged
@@ -148,6 +150,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6203968504879096872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5579065525174406210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0beff829f71053f4a9908c0959bb5be2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RangePoint: {fileID: 0}
+  BulletTypePrefab: {fileID: 0}
+  Animator: {fileID: 5279009872536683296}
 --- !u!95 &5279009872536683296
 Animator:
   serializedVersion: 3
@@ -208,11 +225,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &7061958618502495147
 MonoBehaviour:
@@ -229,9 +246,28 @@ MonoBehaviour:
   player: {fileID: 5756699945811894458}
   animator: {fileID: 5279009872536683296}
   rb: {fileID: 3871542307663602659}
-  runSpeed: 10
-  JumpForce: 500
+  runSpeed: 5
+  JumpForce: 800
   LayerGroundIs:
     serializedVersion: 2
     m_Bits: 160
   GroundCheck: {fileID: 9191103940409550681}
+--- !u!114 &49182934824692318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5579065525174406210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4c66a8fa94be6344a1a686bd449ef29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 5279009872536683296}
+  attackPoint: {fileID: 0}
+  attackRange: 0.5
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  Damage: 20
