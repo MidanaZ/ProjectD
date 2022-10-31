@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public HealthBar healthBar;
     public GameObject YouDiedPanel;
     public AudioSource HealthPickUp;
+    public Animator Animator;
 
     void Start()
     {
@@ -31,12 +32,14 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int Damage)
     {
         currentHealth -= Damage;
+        Animator.SetBool("Hurt", true);
         //healthBar.SetHealth(currentHealth);
     }
     public void PlayerDead()
     {
         YouDiedPanel.SetActive(true);
         Time.timeScale = 0;
+        Animator.SetBool("Dead",true);
     }
     public void HealthPack()
     {
