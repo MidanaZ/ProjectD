@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        //healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     void Update()
@@ -33,7 +33,7 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth -= Damage;
         Animator.SetBool("Hurt", true);
-        //healthBar.SetHealth(currentHealth);
+        healthBar.SetHealth(currentHealth);
     }
     public void PlayerDead()
     {
