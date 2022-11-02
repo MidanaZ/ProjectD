@@ -186,6 +186,7 @@ MonoBehaviour:
   attackDistance: 2
   moveSpeed: 2
   timer: 3
+  MeleeDamage: 20
 --- !u!50 &5537842272221021841
 Rigidbody2D:
   serializedVersion: 4
@@ -247,6 +248,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   animator: {fileID: 5537842272221021838}
+  rb: {fileID: 5537842272221021841}
+  collider: {fileID: 5537842272221021842}
 --- !u!1 &5537842272685600088
 GameObject:
   m_ObjectHideFlags: 0

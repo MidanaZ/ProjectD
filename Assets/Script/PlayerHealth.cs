@@ -32,13 +32,13 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int Damage)
     {
         currentHealth -= Damage;
-        Animator.SetBool("Hurt", true);
+        Animator.SetTrigger("Hurt");
         healthBar.SetHealth(currentHealth);
     }
     public void PlayerDead()
     {
-        YouDiedPanel.SetActive(true);
-        Time.timeScale = 0;
+        //YouDiedPanel.SetActive(true);
+        //Time.timeScale = 0;
         Animator.SetBool("Dead",true);
     }
     public void HealthPack()

@@ -7,6 +7,8 @@ public class Enemy : MonoBehaviour
     public int maxHealth = 100;
     public Animator animator;
     int currentHealth;
+    public Rigidbody2D rb;
+    public Collider2D collider;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,17 +21,17 @@ public class Enemy : MonoBehaviour
 
         animator.SetTrigger("Hurt");
 
-        if(currentHealth < 0)
+        if(currentHealth <= 0)
         {
             Die();
+            collider.GetComponent<Collider2D>().enabled = false;
         }
     }
     void Die()
     {
-        Debug.Log("Enemy died!");
         animator.SetBool("IsDead", true);
 
-        //GetComponent<Collider2D>().enabled = false;
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
         this.enabled = false;
         Destroy(gameObject);
     }

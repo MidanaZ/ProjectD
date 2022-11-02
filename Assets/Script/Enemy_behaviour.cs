@@ -10,6 +10,7 @@ public class Enemy_behaviour : MonoBehaviour
     public float attackDistance;
     public float moveSpeed;
     public float timer;
+    public int MeleeDamage = 20;
 
     private RaycastHit2D hit;
     private GameObject target;
@@ -34,11 +35,13 @@ public class Enemy_behaviour : MonoBehaviour
         {
             hit = Physics2D.Raycast(rayCast.position, Vector2.left, rayCastLenght, raycastMask);
             RaycastDebugger();
+            
         }
         //when player is detected
         if(hit.collider != null)
         {
             EnemyLogic();
+            rayCast.GetComponent<PlayerHealth>().TakeDamage(MeleeDamage);
         }
         else if(hit.collider == null)
         {
