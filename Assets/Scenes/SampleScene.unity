@@ -138,9 +138,9 @@ GameObject:
   - component: {fileID: 127807380}
   - component: {fileID: 127807383}
   - component: {fileID: 127807382}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -933,7 +933,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 600151878}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3190,6 +3190,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 49182934824692318, guid: 1c081d1f516c8054281d23a1fe50aa8e, type: 3}
+      propertyPath: bossLayer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 49182934824692318, guid: 1c081d1f516c8054281d23a1fe50aa8e, type: 3}
+      propertyPath: enemyLayer.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4234565156464446700, guid: 1c081d1f516c8054281d23a1fe50aa8e, type: 3}
       propertyPath: healthBar
       value: 
